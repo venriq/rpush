@@ -10,7 +10,7 @@ GIT
 PATH
   remote: .
   specs:
-    rpush (2.7.0)
+    rpush (2.8.0)
       activesupport
       ansi
       multi_json (~> 1.0)

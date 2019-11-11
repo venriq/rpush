@@ -136,7 +136,8 @@ module Rpush
 
         def claim_notifications(relation)
           ids = relation.map(:id)
-          relation.where('$isolated' => 1).in(id: ids).update_all(processing: true, processing_pid: Process.pid)
+          # relation.where('$isolated' => 1).in(id: ids).update_all(processing: true, processing_pid: Process.pid)
+          relation.in(id: ids).update_all(processing: true, processing_pid: Process.pid)
           Rpush::Client::Mongoid::Notification.where(processing: true, processing_pid: Process.pid).in(id: ids).asc('created_at')
         end
 
