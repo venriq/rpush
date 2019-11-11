@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'rspec'
-gem 'rails', '~> 4.2'
+gem 'rails', '5.2.2'
 gem 'database_cleaner'
 gem 'timecop'
 gem 'rpush-redis', '0.4.1'
-gem 'rpush-mongoid', '0.1.0'
+gem 'rpush-mongoid', github: 'venriq/rpush-mongoid', branch: 'master' #point to a branch that uses Mongoid 6.x
 
 platform :mri do
   gem 'cane'
